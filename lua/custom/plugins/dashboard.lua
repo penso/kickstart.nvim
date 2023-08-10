@@ -6,9 +6,9 @@ return {
       theme = 'hyper',
       shortcut_type = 'number',
       config = {
-        week_header = {
-          enable = true,
-        },
+        -- week_header = {
+        --   enable = true,
+        -- },
         shortcut = {
           { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
           {
@@ -28,12 +28,18 @@ return {
           {
             desc = ' dotfiles',
             group = 'Number',
-            action = 'Telescope dotfiles',
+            action = 'Telescope find_files hidden=true',
             key = 'd',
           },
+          -- {
+          --   desc = ' dotfiles',
+          --   group = 'Number',
+          --   action = "<CMD>edit ~/.config/nvim/init.lua<CR>",
+          --   key = 'c',
+          -- },
         },
       },
     }
   end,
-  dependencies = { {'nvim-tree/nvim-web-devicons'}}
+  dependencies = { { 'nvim-tree/nvim-web-devicons' } }
 }

@@ -1,16 +1,19 @@
 -- Set <space> as the leader key
 -- See `:help mapleader`
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader          = ' '
+vim.g.maplocalleader     = ' '
 
 -- Recommended by vim-tree
-vim.g.loaded_netrw = 1
+vim.g.loaded_netrw       = 1
 vim.g.loaded_netrwPlugin = 1
+
+-- Avoid errors with notify
+vim.o.termguicolors      = true
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
-local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+local lazypath           = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system {
     'git',
@@ -179,7 +182,7 @@ vim.wo.number          = true
 vim.opt.relativenumber = true
 
 -- Enable mouse mode
-vim.o.mouse            = 'r'
+vim.o.mouse            = ''
 
 vim.opt.wrap           = true
 
@@ -216,8 +219,6 @@ vim.o.timeoutlen       = 300
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt      = 'menuone,noselect'
-
-vim.o.termguicolors    = true
 
 -- [[ Basic Keymaps ]]
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', {
