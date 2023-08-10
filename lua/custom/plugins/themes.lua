@@ -8,7 +8,8 @@ return {
   -- { "gruvbox-community/gruvbox" },
   -- { "ellisonleao/gruvbox.nvim" },
 
-  { "catppuccin/nvim", name = "catppuccin" },
+  { "Mofiqul/vscode.nvim" },
+  { "catppuccin/nvim",            name = "catppuccin" },
   { "projekt0n/github-nvim-theme" }, -- incompatible with LSP
   { "sainnhe/edge" },
   { "sainnhe/sonokai" },
