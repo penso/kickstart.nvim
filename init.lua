@@ -231,6 +231,9 @@ vim.keymap.set('n', '<leader>;', ':Dashboard<CR>', {
 vim.keymap.set('n', '<leader>/', '<Plug>(comment_toggle_linewise_current)', {
   desc = 'Comment ',
 })
+vim.keymap.set('n', '<leader>lh', '<cmd>lua ToggleRustInlayHints()<cr>', {
+  desc = 'comment ',
+})
 
 -- vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>', {
 --   desc = 'No Highlight',
@@ -505,6 +508,16 @@ cmp.setup {
 }
 
 vim.cmd [[colorscheme gruvbox]]
+
+function ToggleRustInlayHints()
+  if hints_enabled then
+    vim.api.nvim_command('RustDisableInlayHints')
+    hints_enabled = false
+  else
+    vim.api.nvim_command('RustEnableInlayHints')
+    hints_enabled = true
+  end
+end
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
