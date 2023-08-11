@@ -48,6 +48,7 @@ return {
         adapter = codelldb_adapter,
       },
       server = {
+        on_attach = require("lsp_on_attach")
       },
     }
   end,
