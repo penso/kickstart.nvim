@@ -3,7 +3,7 @@
 vim.g.mapleader          = ' '
 vim.g.maplocalleader     = ' '
 
--- Recommended by vim-tree
+-- Recommended by vim-tree,
 vim.g.loaded_netrw       = 1
 vim.g.loaded_netrwPlugin = 1
 
