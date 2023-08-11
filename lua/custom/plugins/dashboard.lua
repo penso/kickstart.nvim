@@ -6,11 +6,24 @@ return {
       theme = 'hyper',
       shortcut_type = 'number',
       config = {
-        -- week_header = {
-        --   enable = true,
-        -- },
+        week_header = {
+          enable = true,
+        },
         shortcut = {
-          { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
+          {
+            icon = ' ',
+            desc = 'Edit config',
+            key = 'c',
+            action = function()
+              vim.cmd('e ~/.config/nvim/init.lua')
+            end,
+          },
+          {
+            desc = '󰊳 Update',
+            group = '@property',
+            action = 'Lazy update',
+            key = 'u'
+          },
           {
             icon = ' ',
             icon_hl = '@variable',
@@ -20,23 +33,11 @@ return {
             key = 'f',
           },
           {
-            desc = ' Apps',
-            group = 'DiagnosticHint',
-            action = 'Telescope app',
-            key = 'a',
-          },
-          {
             desc = ' dotfiles',
             group = 'Number',
             action = 'Telescope find_files hidden=true',
             key = 'd',
           },
-          -- {
-          --   desc = ' dotfiles',
-          --   group = 'Number',
-          --   action = "<CMD>edit ~/.config/nvim/init.lua<CR>",
-          --   key = 'c',
-          -- },
         },
       },
     }
