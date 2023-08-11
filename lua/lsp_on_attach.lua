@@ -1,5 +1,4 @@
 local function on_attach(_, bufnr)
-  -- In this case, we create a function that lets us more easily define mappings specific
   -- for LSP related items. It sets the mode, buffer and description for us each time.
   local nmap = function(keys, func, desc)
     if desc then
@@ -36,6 +35,29 @@ local function on_attach(_, bufnr)
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
     vim.lsp.buf.format()
   end, { desc = 'Format current buffer with LSP' })
+
+  local wk = require("which-key")
+  wk.register({
+    c = {
+      name = "[C]ode",
+      a = "[C]ode [A]ction",
+      l = "[C]ode [L]ens",
+    },
+    d = {
+      name = "[D]ocument",
+      s = "[D]ocument [S]ymbols",
+    }
+  }, { prefix = "<leader>" })
+
+  wk.register({
+    g = {
+      name = "[G]oto",
+      d = "[G]oto [D]efinition",
+      D = "[G]oto [D]eclaration",
+      r = "[G]oto [R]eferences",
+      I = "[G]oto [I]mplementation",
+    }
+  })
 end
 
 return on_attach
