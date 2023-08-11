@@ -232,7 +232,7 @@ vim.keymap.set('n', '<leader>/', '<Plug>(comment_toggle_linewise_current)', {
   desc = 'Comment ',
 })
 vim.keymap.set('n', '<leader>lh', '<cmd>lua ToggleRustInlayHints()<cr>', {
-  desc = 'comment ',
+  desc = 'Toggle Rust Hints',
 })
 
 -- vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>', {
