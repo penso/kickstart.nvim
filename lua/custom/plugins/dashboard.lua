@@ -33,6 +33,14 @@ return {
             key = 'f',
           },
           {
+            icon = ' ',
+            icon_hl = '@variable',
+            desc = 'Recent Files',
+            group = 'Label',
+            action = 'Telescope oldfiles',
+            key = 'r',
+          },
+          {
             desc = ' dotfiles',
             group = 'Number',
             action = 'Telescope find_files hidden=true',
