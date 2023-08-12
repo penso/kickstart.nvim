@@ -218,6 +218,9 @@ vim.o.timeoutlen       = 300
 -- Set completeopt to have a better completion experience
 vim.o.completeopt      = 'menuone,noselect'
 
+vim.opt.splitbelow     = true
+vim.opt.cursorline     = true
+
 -- [[ Basic Keymaps ]]
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', {
   desc = 'Explorer',
@@ -228,9 +231,6 @@ vim.keymap.set('n', '<leader>;', ':Dashboard<CR>', {
 })
 vim.keymap.set('n', '<leader>/', '<Plug>(comment_toggle_linewise_current)', {
   desc = 'Comment ',
-})
-vim.keymap.set('n', '<leader>lh', '<cmd>lua ToggleRustInlayHints()<cr>', {
-  desc = 'Toggle Rust Hints',
 })
 
 -- vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>', {

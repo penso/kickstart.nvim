@@ -11,6 +11,8 @@ local function on_attach(_, bufnr)
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
   nmap('<leader>cl', vim.lsp.codelens.run, '[C]ode [L]ens')
+  nmap('<leader>cl', vim.lsp.codelens.run, '[C]ode [L]ens')
+  nmap('<leader>ch', '<cmd>lua ToggleRustInlayHints()<cr>', '[C]ode Rust [H]ints')
 
   nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
@@ -42,6 +44,7 @@ local function on_attach(_, bufnr)
       name = "[C]ode",
       a = "[C]ode [A]ction",
       l = "[C]ode [L]ens",
+      h = "[C]ode Rust [H]ints",
     },
     d = {
       name = "[D]ocument",

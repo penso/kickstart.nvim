@@ -15,6 +15,7 @@ return {
   config = function()
     require("rust-tools").setup {
       tools = {
+        -- quickfix, termopen, toggleterm, vimux
         executor = require("rust-tools/executors").termopen, -- can be quickfix or termopen
         reload_workspace_from_cargo_toml = true,
         runnables = {
