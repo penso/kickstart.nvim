@@ -463,6 +463,7 @@ local icons = {
 }
 
 local cmp_window = require "cmp.config.window"
+local lspkind = require('lspkind')
 
 cmp.setup {
   snippet = {
@@ -516,26 +517,32 @@ cmp.setup {
   formatting = {
     expandable_indicator = true,
     fields = { 'kind', 'abbr', 'menu' },
-    format = function(entry, item)
-      item.kind = string.format('%s ', icons[item.kind])
-      item.menu = ({
-        buffer = '[Buffer]',
-        luasnip = '[Snip]',
-        nvim_lsp = '[LSP]',
-        nvim_lua = '[API]',
-        path = '[Path]',
-        rg = '[RG]',
-        copilot = '[Copilot]',
 
-        emoji = "(Emoji)",
-        calc = "(Calc)",
-        cmp_tabnine = "(Tabnine)",
-        vsnip = "(Snippet)",
-        tmux = "(TMUX)",
-        treesitter = "(TreeSitter)",
-      })[entry.source.name]
-      return item
-    end,
+    format = lspkind.cmp_format({
+      mode = 'default',      -- show only symbol annotations
+      maxwidth = 50,         -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+      ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+      symbol_map = { Copilot = "" },
+      before = function(entry, item)
+        item.menu = ({
+          buffer = '[Buffer]',
+          luasnip = '[Snip]',
+          nvim_lsp = '[LSP]',
+          nvim_lua = '[API]',
+          path = '[Path]',
+          rg = '[RG]',
+          copilot = '[Copilot]',
+
+          emoji = "(Emoji)",
+          calc = "(Calc)",
+          cmp_tabnine = "(Tabnine)",
+          vsnip = "(Snippet)",
+          tmux = "(TMUX)",
+          treesitter = "(TreeSitter)",
+        })[entry.source.name]
+        return item
+      end
+    })
   },
   window = {
     completion = cmp_window.bordered(),
