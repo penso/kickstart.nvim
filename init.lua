@@ -284,6 +284,7 @@ vim.keymap.set('n', '<leader>s/', function()
   })
 end, { desc = '[/] Fuzzily search in current buffer' })
 
+vim.keymap.set('n', '<leader>gg', require('lazygit').toggle, { desc = 'Lazy[G]it' })
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
 vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
@@ -464,16 +465,6 @@ cmp.setup {
 }
 
 vim.cmd [[colorscheme gruvbox]]
-
-function ToggleRustInlayHints()
-  if hints_enabled then
-    vim.api.nvim_command('RustDisableInlayHints')
-    hints_enabled = false
-  else
-    vim.api.nvim_command('RustEnableInlayHints')
-    hints_enabled = true
-  end
-end
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

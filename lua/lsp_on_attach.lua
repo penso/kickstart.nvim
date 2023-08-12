@@ -1,3 +1,13 @@
+function ToggleRustInlayHints()
+  if hints_enabled then
+    vim.api.nvim_command('RustDisableInlayHints')
+    hints_enabled = false
+  else
+    vim.api.nvim_command('RustEnableInlayHints')
+    hints_enabled = true
+  end
+end
+
 local function on_attach(_, bufnr)
   -- for LSP related items. It sets the mode, buffer and description for us each time.
   local nmap = function(keys, func, desc)
