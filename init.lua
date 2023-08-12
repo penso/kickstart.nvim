@@ -219,6 +219,7 @@ vim.o.timeoutlen       = 300
 vim.o.completeopt      = 'menuone,noselect'
 
 vim.opt.splitbelow     = true
+vim.opt.splitright     = true
 vim.opt.cursorline     = true
 
 -- [[ Basic Keymaps ]]
