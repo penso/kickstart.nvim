@@ -423,6 +423,47 @@ local luasnip = require 'luasnip'
 require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
 
+-- Should use https://github.com/LunarVim/LunarVim/blob/master/lua/lvim/icons.lua
+local icons = {
+  Array = '  ',
+  Boolean = '  ',
+  Class = '  ',
+  Color = '  ',
+  Constant = '  ',
+  Constructor = '  ',
+  Enum = '  ',
+  EnumMember = '  ',
+  Event = '  ',
+  Field = '  ',
+  File = '  ',
+  Folder = '  ',
+  Function = '  ',
+  Interface = '  ',
+  Key = '  ',
+  Keyword = '  ',
+  Method = '  ',
+  Module = '  ',
+  Namespace = '  ',
+  Null = ' ﳠ ',
+  Number = '  ',
+  Object = '  ',
+  Operator = '  ',
+  Package = '  ',
+  Property = '  ',
+  Reference = '  ',
+  Snippet = '  ',
+  String = '  ',
+  Struct = '  ',
+  Text = '  ',
+  TypeParameter = '  ',
+  Unit = '  ',
+  Value = '  ',
+  Variable = '  ',
+  Copilot = "",
+}
+
+local cmp_window = require "cmp.config.window"
+
 cmp.setup {
   snippet = {
     expand = function(args)
@@ -461,7 +502,44 @@ cmp.setup {
   sources = {
     { name = 'copilot' },
     { name = 'nvim_lsp' },
-    { name = 'luasnip' },
+    { name = "path" },
+    -- { name = "luasnip" },
+    { name = "cmp_tabnine" },
+    { name = "nvim_lua" },
+    { name = "buffer" },
+    { name = "calc" },
+    { name = "emoji" },
+    { name = "treesitter" },
+    { name = "crates" },
+    { name = "tmux" },
+  },
+  formatting = {
+    expandable_indicator = true,
+    fields = { 'kind', 'abbr', 'menu' },
+    format = function(entry, item)
+      item.kind = string.format('%s ', icons[item.kind])
+      item.menu = ({
+        buffer = '[Buffer]',
+        luasnip = '[Snip]',
+        nvim_lsp = '[LSP]',
+        nvim_lua = '[API]',
+        path = '[Path]',
+        rg = '[RG]',
+        copilot = '[Copilot]',
+
+        emoji = "(Emoji)",
+        calc = "(Calc)",
+        cmp_tabnine = "(Tabnine)",
+        vsnip = "(Snippet)",
+        tmux = "(TMUX)",
+        treesitter = "(TreeSitter)",
+      })[entry.source.name]
+      return item
+    end,
+  },
+  window = {
+    completion = cmp_window.bordered(),
+    documentation = cmp_window.bordered(),
   },
 }
 
