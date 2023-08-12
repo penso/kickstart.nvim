@@ -421,46 +421,31 @@ mason_lspconfig.setup_handlers {
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 require('luasnip.loaders.from_vscode').lazy_load()
-luasnip.config.setup {}
-
--- Should use https://github.com/LunarVim/LunarVim/blob/master/lua/lvim/icons.lua
-local icons = {
-  Array = '  ',
-  Boolean = '  ',
-  Class = '  ',
-  Color = '  ',
-  Constant = '  ',
-  Constructor = '  ',
-  Enum = '  ',
-  EnumMember = '  ',
-  Event = '  ',
-  Field = '  ',
-  File = '  ',
-  Folder = '  ',
-  Function = '  ',
-  Interface = '  ',
-  Key = '  ',
-  Keyword = '  ',
-  Method = '  ',
-  Module = '  ',
-  Namespace = '  ',
-  Null = ' ﳠ ',
-  Number = '  ',
-  Object = '  ',
-  Operator = '  ',
-  Package = '  ',
-  Property = '  ',
-  Reference = '  ',
-  Snippet = '  ',
-  String = '  ',
-  Struct = '  ',
-  Text = '  ',
-  TypeParameter = '  ',
-  Unit = '  ',
-  Value = '  ',
-  Variable = '  ',
-  Copilot = "",
+luasnip.config.setup {
+  history = true,
+  updateevents = "TextChanged, TextChangedI",
 }
+vim.keymap.set({ "i", "s" }, "<C-K>", function()
+  if luasnip.expand_or_locally_jumpable() then
+    luasnip.expand_or_jump()
+  end
+end, { silent = true })
+vim.keymap.set({ "i", "s" }, "<C-L>", function()
+  if luasnip.jumpable(1) then luasnip.jump(1) end
+end, { silent = true })
+vim.keymap.set({ "i", "s" }, "<C-J>", function()
+  if luasnip.jumpable(-1) then
+    luasnip.jump(-1)
+  end
+end, { silent = true })
+
+vim.keymap.set({ "i", "s" }, "<C-E>", function()
+  if luasnip.choice_active() then
+    luasnip.change_choice(1)
+  end
+end, { silent = true })
+
+-- Should I use https://github.com/LunarVim/LunarVim/blob/master/lua/lvim/icons.lua
 
 local cmp_window = require "cmp.config.window"
 local lspkind = require('lspkind')
@@ -504,7 +489,7 @@ cmp.setup {
     { name = 'copilot' },
     { name = 'nvim_lsp' },
     { name = "path" },
-    -- { name = "luasnip" },
+    { name = "luasnip" },
     { name = "cmp_tabnine" },
     { name = "nvim_lua" },
     { name = "buffer" },
