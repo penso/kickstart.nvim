@@ -5,6 +5,18 @@ local getFirstElement = function(s)
   return s -- Return the original string if no '.' was found
 end
 
+local function custom_progress()
+  local current_line = vim.fn.line('.')
+  local total_lines = vim.fn.line('$')
+  if current_line == 1 then
+    return "TOP"
+  elseif current_line == total_lines then
+    return "BOT"
+  else
+    return "%p%%/%L"
+  end
+end
+
 return {
   -- Set lualine as statusline
   'nvim-lualine/lualine.nvim',
@@ -31,7 +43,7 @@ return {
       lualine_c = { "filename" },
       lualine_x = { "diagnostics", "filetype" },
       lualine_y = { "location" },
-      lualine_z = { "%p%%/%L", {
+      lualine_z = { custom_progress, {
         "hostname",
         fmt = function(hostname)
           return getFirstElement(hostname)
