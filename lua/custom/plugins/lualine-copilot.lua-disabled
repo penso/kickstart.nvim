@@ -1,0 +1,3 @@
+return {
+  { "ofseed/lualine-copilot" }
+}

@@ -17,6 +17,10 @@ local function custom_progress()
   end
 end
 
+local copilot_status = function()
+  return require("copilot_status").status_string()
+end
+
 return {
   -- Set lualine as statusline
   'nvim-lualine/lualine.nvim',
@@ -41,7 +45,11 @@ return {
       } },
       lualine_b = { "branch", "diff" },
       lualine_c = { "filename" },
-      lualine_x = { "diagnostics", "filetype" },
+      lualine_x = {
+        copilot_status,
+        "diagnostics",
+        "filetype"
+      },
       lualine_y = { "location" },
       lualine_z = { custom_progress, {
         "hostname",
