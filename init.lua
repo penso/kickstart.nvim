@@ -183,6 +183,8 @@ vim.opt.splitbelow     = true
 vim.opt.splitright     = true
 vim.opt.cursorline     = true
 
+vim.opt.laststatus     = 3
+
 -- [[ Basic Keymaps ]]
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', {
   desc = 'Explorer',
