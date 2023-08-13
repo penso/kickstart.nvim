@@ -1,0 +1,12 @@
+-- This is WAY TOO SLOW
+return {
+  "cljoly/telescope-repo.nvim",
+  dependencies = {
+    "nvim-telescope/telescope.nvim",
+    "nvim-lua/plenary.nvim"
+  },
+  config = function()
+    require("telescope").load_extension("repo")
+    -- vim.keymap.set("n", "<leader>u", "<cmd>Telescope command_center<cr>")
+  end,
+}
