@@ -23,8 +23,8 @@ return {
       lualine_b = { "branch", "diff" },
       lualine_c = { "filename" },
       lualine_x = { "diagnostics", "filetype" },
-      lualine_y = { "progress" },
-      lualine_z = { "location", "hostname" },
+      lualine_y = { "location" },
+      lualine_z = { "%p%%/%L", "hostname" },
     },
     inactive_sections = {
       lualine_a = {},
