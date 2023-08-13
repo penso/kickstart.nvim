@@ -20,9 +20,9 @@ return {
           -- return res:sub(1, 1)
         end
       } },
-      lualine_b = { "branch", "diff", "diagnostics" },
+      lualine_b = { "branch", "diff" },
       lualine_c = { "filename" },
-      lualine_x = { "encoding", "filetype" },
+      lualine_x = { "diagnostics", "filetype" },
       lualine_y = { "progress" },
       lualine_z = { "location", "hostname" },
     },
