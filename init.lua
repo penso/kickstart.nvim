@@ -197,9 +197,9 @@ vim.keymap.set('n', '<leader>/', '<Plug>(comment_toggle_linewise_current)', {
   desc = 'Comment ',
 })
 
--- vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>', {
---   desc = 'No Highlight',
--- })
+vim.keymap.set('n', '<leader>nh', ':nohlsearch<CR>', {
+  desc = '[N]o [H]ighlight',
+})
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
@@ -464,6 +464,8 @@ cmp.setup {
 }
 
 vim.cmd [[colorscheme gruvbox]]
+
+require 'keymaps'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
