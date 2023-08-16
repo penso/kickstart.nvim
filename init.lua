@@ -463,7 +463,7 @@ cmp.setup {
   },
 }
 
-vim.cmd [[colorscheme gruvbox]]
+vim.cmd [[colorscheme darcula-dark]]
 
 require 'keymaps'
 
