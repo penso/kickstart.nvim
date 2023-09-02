@@ -29,7 +29,9 @@ return {
   },
   -- See `:help lualine.txt`
   opts = {
+    extensions = { 'nvim-tree', 'trouble', 'toggleterm' },
     options = {
+      disabled_filetypes = { 'packer', 'NVimTree', 'NvimTree_1' },
       icons_enabled = true,
       theme = 'auto',
       -- component_separators = '|',

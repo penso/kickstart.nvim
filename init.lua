@@ -225,7 +225,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
   ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim', 'regex', 'lua',
-    'bash', 'markdown', 'markdown_inline' },
+    'bash', 'markdown', 'markdown_inline', 'javascript', 'css' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = false,
@@ -463,7 +463,7 @@ cmp.setup {
   },
 }
 
-vim.cmd [[colorscheme darcula-dark]]
+vim.cmd [[colorscheme gruvbox]]
 
 require 'keymaps'
 
