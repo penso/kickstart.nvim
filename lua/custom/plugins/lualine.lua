@@ -31,7 +31,7 @@ return {
   opts = {
     extensions = { 'nvim-tree', 'trouble', 'toggleterm' },
     options = {
-      disabled_filetypes = { 'packer', 'NVimTree', 'NvimTree_1' },
+      disabled_filetypes = { 'packer', 'NVimTree', 'NvimTree_1', 'quickfix', 'prompt', 'lazy', 'symbols-outline' },
       icons_enabled = true,
       theme = 'auto',
       -- component_separators = '|',
