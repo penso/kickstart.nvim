@@ -3,7 +3,11 @@ return {
   config = function()
     require('notify').setup {
       render = "minimal",
+      on_open = function(win)
+        vim.api.nvim_win_set_config(win, { focusable = false })
+      end,
     }
+
     require('telescope').load_extension('notify')
 
     vim.notify = require('notify')
