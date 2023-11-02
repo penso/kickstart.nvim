@@ -2,7 +2,10 @@ return {
   'rcarriga/nvim-notify',
   config = function()
     require('notify').setup {
-      render = "minimal",
+      render = "wrapped-compact",
+      max_width = 50,
+      stages = "static",
+      fps = 120,
       on_open = function(win)
         vim.api.nvim_win_set_config(win, { focusable = false })
       end,
