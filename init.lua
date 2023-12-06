@@ -1,19 +1,23 @@
 -- Set <space> as the leader key
 -- See `:help mapleader`
-vim.g.mapleader          = ' '
-vim.g.maplocalleader     = ' '
+vim.g.mapleader                  = ' '
+vim.g.maplocalleader             = ' '
+
+vim.g.changelog_username         = "Fabien Penso <constellations@pen.so>"
+vim.g.changelog_dateformat       = '## %Y-%m-%d'
+vim.g.changelog_new_entry_format = '- %c'
 
 -- Recommended by vim-tree,
-vim.g.loaded_netrw       = 1
-vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw               = 1
+vim.g.loaded_netrwPlugin         = 1
 
 -- Avoid errors with notify
-vim.o.termguicolors      = true
+vim.o.termguicolors              = true
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
-local lazypath           = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+local lazypath                   = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system {
     'git',
