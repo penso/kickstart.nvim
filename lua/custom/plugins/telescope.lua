@@ -33,6 +33,13 @@ return {
           prompt_position = 'bottom',
         }
       },
+      extensions = {
+        ["ui-select"] = {
+          require("telescope.themes").get_dropdown {
+            -- even more opts
+          }
+        }
+      }
     }
 
     -- Enable telescope fzf native, if installed
