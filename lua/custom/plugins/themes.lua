@@ -35,4 +35,5 @@ return {
       -- vim.cmd.colorscheme 'onedark'
     end,
   },
+  { "oxfist/night-owl.nvim" },
 }
