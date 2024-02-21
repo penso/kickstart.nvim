@@ -19,6 +19,14 @@ return {
 
     -- Close buffer
     map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
+
+    local wk = require("which-key")
+    wk.register({
+      b = {
+        name = "[B]arbar",
+        C = { "<cmd>BufferCloseAllButCurrentOrPinned<cr>", "[B]arbar Buffer[C]loseAllButCurrentOrPinned" },
+      },
+    }, { prefix = "<leader>" })
   end,
   opts = {
     auto_hide = true,
