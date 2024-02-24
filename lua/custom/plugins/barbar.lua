@@ -25,6 +25,7 @@ return {
       b = {
         name = "[B]arbar",
         C = { "<cmd>BufferCloseAllButCurrentOrPinned<cr>", "[B]arbar Buffer[C]loseAllButCurrentOrPinned" },
+        p = { "<Cmd>BufferPin<CR>", "[B]arbar [p]in" },
       },
     }, { prefix = "<leader>" })
   end,
