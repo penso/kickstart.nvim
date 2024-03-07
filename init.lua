@@ -3,7 +3,7 @@
 vim.g.mapleader                  = ' '
 vim.g.maplocalleader             = ' '
 
-vim.g.changelog_username         = "Fabien Penso <constellations@pen.so>"
+vim.g.changelog_username         = "Fabien Penso <git@pen.so>"
 vim.g.changelog_dateformat       = '## %Y-%m-%d'
 vim.g.changelog_new_entry_format = '- %c'
 
