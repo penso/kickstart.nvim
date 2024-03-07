@@ -1,3 +1,6 @@
+
+-- Floating top status bars
+
 -- local function get_diagnostic_label(props)
 --   local icons = {
 --     Error = "",
