@@ -31,6 +31,15 @@ return {
         layout_strategy = 'horizontal',
         layout_config = {
           prompt_position = 'bottom',
+          horizontal = {
+            mirror = false,
+            preview_width = 0.65,
+            width = 0.98,
+          },
+          vertical = {
+            mirror = false,
+            width = 0.95,
+          },
         }
       },
       extensions = {

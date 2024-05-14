@@ -342,12 +342,24 @@ vim.cmd [[ set runtimepath^=~/.config/nvim ]]
 
 mason_lspconfig.setup_handlers {
   function(server_name)
-    require('lspconfig')[server_name].setup {
+    local config = {
       capabilities = capabilities,
       on_attach = require("lsp_on_attach"),
       settings = servers[server_name],
       filetypes = (servers[server_name] or {}).filetypes,
     }
+
+    if server_name == "rust_analyzer" then
+      config.settings = vim.tbl_deep_extend("force", config.settings or {}, {
+        ["rust-analyzer"] = {
+          files = {
+            excludeDirs = { "node_modules", "fixtures" }
+          }
+        }
+      })
+    end
+
+    require('lspconfig')[server_name].setup(config)
   end
 }
 

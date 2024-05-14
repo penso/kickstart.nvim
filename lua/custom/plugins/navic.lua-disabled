@@ -1,0 +1,5 @@
+-- fills the winbar
+return {
+  "SmiteshP/nvim-navic",
+  dependencies = { "neovim/nvim-lspconfig" }
+}
