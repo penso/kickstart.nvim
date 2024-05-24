@@ -1,13 +1,3 @@
-function ToggleRustInlayHints()
-  if hints_enabled then
-    vim.api.nvim_command('RustDisableInlayHints')
-    hints_enabled = false
-  else
-    vim.api.nvim_command('RustEnableInlayHints')
-    hints_enabled = true
-  end
-end
-
 local function on_attach(_, bufnr)
   -- for LSP related items. It sets the mode, buffer and description for us each time.
   local nmap = function(keys, func, desc)
@@ -22,7 +12,7 @@ local function on_attach(_, bufnr)
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
   nmap('<leader>cl', vim.lsp.codelens.run, '[C]ode [L]ens')
   nmap('<leader>cl', vim.lsp.codelens.run, '[C]ode [L]ens')
-  nmap('<leader>ch', '<cmd>lua ToggleRustInlayHints()<cr>', '[C]ode Rust [H]ints')
+  nmap('<leader>ch', vim.lsp.inlay_hint.enable, '[C]ode Rust [H]ints')
 
   nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')

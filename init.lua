@@ -3,7 +3,7 @@
 vim.g.mapleader                  = ' '
 vim.g.maplocalleader             = ' '
 
-vim.g.changelog_username         = "Fabien Penso <git@pen.so>"
+vim.g.changelog_username         = "Fabien Penso <changelog@pen.so>"
 vim.g.changelog_dateformat       = '## %Y-%m-%d'
 vim.g.changelog_new_entry_format = '- %c'
 
@@ -115,7 +115,7 @@ require('lazy').setup({
   },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim',  opts = {} },
+  -- { 'numToStr/Comment.nvim',  opts = {} },
 
   {
     -- Highlight, edit, and navigate code
@@ -344,7 +344,15 @@ mason_lspconfig.setup_handlers {
   function(server_name)
     local config = {
       capabilities = capabilities,
-      on_attach = require("lsp_on_attach"),
+      on_attach = function(client, bufnr)
+        -- Call your existing on_attach function if you have one
+        local on_attach = require("lsp_on_attach")
+        if on_attach then
+          on_attach(client, bufnr)
+        end
+
+        vim.lsp.inlay_hint.enable()
+      end,
       settings = servers[server_name],
       filetypes = (servers[server_name] or {}).filetypes,
     }
