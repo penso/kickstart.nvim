@@ -34,6 +34,7 @@
   "mason-nvim-dap.nvim": { "branch": "main", "commit": "67210c0e775adec55de9826b038e8b62de554afc" },
   "mason.nvim": { "branch": "main", "commit": "49ff59aded1047a773670651cfa40e76e63c6377" },
   "melange-nvim": { "branch": "master", "commit": "5feb4a08876b81ccb61cae1adaffa2e737124922" },
+  "mkdir.nvim": { "branch": "main", "commit": "c55d1dee4f099528a1853b28bb28caa802eba217" },
   "molokai.nvim": { "branch": "main", "commit": "21badb0e735a59a6d576221d7683b50c964f2db7" },
   "monokai-pro.nvim": { "branch": "master", "commit": "aafde73a622435891d36b411d8623e705ead6293" },
   "neodev.nvim": { "branch": "main", "commit": "ce9a2e8eaba5649b553529c5498acb43a6c317cd" },
