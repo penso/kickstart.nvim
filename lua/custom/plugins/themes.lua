@@ -1,5 +1,6 @@
 return {
-  { "gruvbox-community/gruvbox" },
+  { "ellisonleao/gruvbox.nvim",   priority = 1000,    config = true, },
+  -- { "gruvbox-community/gruvbox" },
   -- { "sonph/onehalf",            rtp = "vim" },
   { "EdenEast/nightfox.nvim" },
   -- { "LunarVim/onedarker.nvim" }

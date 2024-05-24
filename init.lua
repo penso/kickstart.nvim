@@ -485,8 +485,14 @@ cmp.setup {
     })
   },
   window = {
-    completion = cmp_window.bordered(),
-    documentation = cmp_window.bordered(),
+    documentation = cmp.config.window.bordered {
+      -- border = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' },
+      winhighlight = 'Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None',
+    },
+    completion = cmp.config.window.bordered {
+      -- border = { '┌', '─', '┐', '│', '┘', '─', '└', '│' },
+      winhighlight = 'Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None',
+    }
   },
 }
 
