@@ -1,5 +1,4 @@
 local function on_attach(_, bufnr)
-  -- for LSP related items. It sets the mode, buffer and description for us each time.
   local nmap = function(keys, func, desc)
     if desc then
       desc = 'LSP: ' .. desc
@@ -8,11 +7,11 @@ local function on_attach(_, bufnr)
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
 
-  nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+  nmap('<leader>cr', vim.lsp.buf.rename, '[C]ode [R]ename')
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
   nmap('<leader>cl', vim.lsp.codelens.run, '[C]ode [L]ens')
-  nmap('<leader>cl', vim.lsp.codelens.run, '[C]ode [L]ens')
-  nmap('<leader>ch', function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end, '[C]ode Rust [H]ints')
+  nmap('<leader>ch', function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end,
+    '[C]ode Inlay [H]ints')
 
   nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
@@ -45,6 +44,7 @@ local function on_attach(_, bufnr)
       a = "[C]ode [A]ction",
       l = "[C]ode [L]ens",
       h = "[C]ode Inlay [H]ints",
+      r = "[C]ode [R]ename",
     },
     d = {
       name = "[D]ocument",

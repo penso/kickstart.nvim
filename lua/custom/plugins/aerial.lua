@@ -19,6 +19,14 @@ return {
       end
     })
     -- You probably also want to set a keymap to toggle aerial
-    vim.keymap.set('n', '<leader>cr', '<cmd>AerialToggle!<CR>')
+    vim.keymap.set('n', '<leader>co', '<cmd>AerialToggle!<CR>')
+
+    local wk = require("which-key")
+    wk.register({
+      c = {
+        name = "[C]ode",
+        o = "[C]ode [O]utline",
+      },
+    }, { prefix = "<leader>" })
   end
 }
