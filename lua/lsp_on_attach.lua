@@ -12,7 +12,7 @@ local function on_attach(_, bufnr)
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
   nmap('<leader>cl', vim.lsp.codelens.run, '[C]ode [L]ens')
   nmap('<leader>cl', vim.lsp.codelens.run, '[C]ode [L]ens')
-  nmap('<leader>ch', vim.lsp.inlay_hint.enable, '[C]ode Rust [H]ints')
+  nmap('<leader>ch', function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end, '[C]ode Rust [H]ints')
 
   nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
@@ -22,7 +22,7 @@ local function on_attach(_, bufnr)
   nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
   -- See `:help K` for why this keymap
-  nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
+  -- nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
   nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
   -- Lesser used LSP functionality
@@ -44,7 +44,7 @@ local function on_attach(_, bufnr)
       name = "[C]ode",
       a = "[C]ode [A]ction",
       l = "[C]ode [L]ens",
-      h = "[C]ode Rust [H]ints",
+      h = "[C]ode Inlay [H]ints",
     },
     d = {
       name = "[D]ocument",
