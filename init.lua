@@ -362,7 +362,9 @@ mason_lspconfig.setup_handlers {
         ["rust-analyzer"] = {
           files = {
             excludeDirs = { "node_modules", "fixtures" }
-          }
+          },
+
+          lens = { enable = true }
         }
       })
     end
