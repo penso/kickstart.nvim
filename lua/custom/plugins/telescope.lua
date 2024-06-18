@@ -40,7 +40,28 @@ return {
             mirror = false,
             width = 0.95,
           },
-        }
+        },
+        wrap_results = true,
+      },
+      pickers = {
+        buffers = {
+          sort_lastused = true,
+          theme = "dropdown",
+          previewer = false,
+          mappings = {
+            i = {
+              ["<c-d>"] = require("telescope.actions").delete_buffer,
+            },
+            n = {
+              ["<c-d>"] = require("telescope.actions").delete_buffer,
+            },
+          },
+        },
+        oldfiles = {
+          theme = "dropdown",
+          previewer = false,
+          initial_mode = "normal"
+        },
       },
       extensions = {
         ["ui-select"] = {
