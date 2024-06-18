@@ -42,6 +42,15 @@ return {
           },
         },
         wrap_results = true,
+        path_display = {
+          "truncate",
+          -- "smart",
+          -- 'shorten',
+          -- "filename_first",
+          -- filename_first = {
+          --   reverse_directories = false,
+          -- },
+        },
       },
       pickers = {
         buffers = {
