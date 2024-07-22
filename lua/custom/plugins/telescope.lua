@@ -30,14 +30,14 @@ return {
         },
         layout_strategy = 'horizontal',
         layout_config = {
-          prompt_position = 'bottom',
+          prompt_position = 'top',
           horizontal = {
             mirror = false,
             preview_width = 0.65,
             width = 0.98,
           },
           vertical = {
-            mirror = false,
+            mirror = true,
             width = 0.95,
           },
         },
@@ -53,10 +53,41 @@ return {
         },
       },
       pickers = {
+        colorscheme = {
+          theme = "dropdown",
+          enable_live_preview = true,
+          enable_preview = true,
+          previewer = false,
+          layout_config = {
+            horizontal = {
+              mirror = false,
+              width = 0.50,
+              height = 0.90,
+              preview_width = 0.65,
+            },
+          },
+        },
         buffers = {
+          -- layout_strategy = 'horizontal',
+          -- sort_lastused = true,
+          -- theme = "dropdown",
+          -- -- layout_config = {
+          -- --   -- prompt_position = 'top',
+          -- -- },
+          -- previewer = false,
+          -- enable_preview = false,
           sort_lastused = true,
           theme = "dropdown",
+          enable_preview = false,
           previewer = false,
+          layout_config = {
+            horizontal = {
+              mirror = false,
+              width = 0.50,
+              height = 0.90,
+              preview_width = 0.65,
+            },
+          },
           mappings = {
             i = {
               ["<c-d>"] = require("telescope.actions").delete_buffer,
@@ -67,9 +98,16 @@ return {
           },
         },
         oldfiles = {
-          theme = "dropdown",
+          -- theme = "dropdown",
           previewer = false,
-          initial_mode = "normal"
+          -- initial_mode = "normal"
+        },
+        code_actions = {
+          theme = "cursor",
+          layout_config = {
+            -- prompt_position = 'top',
+          },
+          previewer = false,
         },
       },
       extensions = {
