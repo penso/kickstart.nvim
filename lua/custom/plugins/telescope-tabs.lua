@@ -7,11 +7,10 @@ return {
       -- Your custom config :^)
     }
     local wk = require("which-key")
-    wk.register({
-      s = {
-        name = "[S]earch",
-        t = { "<cmd>lua require('telescope-tabs').list_tabs()<cr>", "[T]abs" },
-      },
-    }, { prefix = "<leader>" })
+    wk.add(
+      {
+        { "<leader>st", "<cmd>lua require('telescope-tabs').list_tabs()<cr>", desc = "[T]abs" },
+      }
+    )
   end,
 }

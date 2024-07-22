@@ -39,15 +39,19 @@ return {
       desc = "Quickfix List (Trouble)",
     },
   },
-  -- config = function()
-  --   local wk = require("which-key")
-  --   wk.register({
-  --     t = {
-  --       name = "[T]rouble",
-  --       c = { "<cmd>TroubleClose<cr>", "[T]trouble [C]lose" },
-  --       r = { "<cmd>TroubleRefresh<cr>", "[T]rouble [R]efresh" },
-  --       t = { "<cmd>TroubleToggle<cr>", "[T]rouble [T]oggle" },
-  --     },
-  --   }, { prefix = "<leader>" })
-  -- end
+  config = function()
+    local wk = require("which-key")
+    wk.add({
+      { "<leader>x", group = "Diagnostics" },
+    })
+
+    local trouble = require("trouble")
+    trouble.setup({
+      -- auto_preview = false,
+      -- auto_fold = true,
+      -- auto_open = false,
+      -- auto_close = true,
+      -- use_lsp_diagnostic_signs = true,
+    })
+  end
 }

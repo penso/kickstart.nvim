@@ -16,11 +16,11 @@ return {
     vim.notify = require('notify')
 
     local wk = require("which-key")
-    wk.register({
-      s = {
-        name = "[S]earch",
-        n = { "<cmd>Telescope notify<cr>", "[N]notifications" },
-      },
-    }, { prefix = "<leader>" })
+    wk.add(
+      {
+        -- { "<leader>s",  group = "[S]earch" },
+        { "<leader>sn", "<cmd>Telescope notify<cr>", desc = "[N]otifications" },
+      }
+    )
   end
 }

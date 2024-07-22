@@ -17,7 +17,7 @@ local function on_attach(_, bufnr)
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
   nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
   nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
-  nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+  nmap('<leader>ss', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
   nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
   -- See `:help K` for why this keymap
@@ -38,29 +38,32 @@ local function on_attach(_, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 
   local wk = require("which-key")
-  wk.register({
-    c = {
-      name = "[C]ode",
-      a = "[C]ode [A]ction",
-      l = "[C]ode [L]ens",
-      h = "[C]ode Inlay [H]ints",
-      r = "[C]ode [R]ename",
-    },
-    d = {
-      name = "[D]ocument",
-      s = "[D]ocument [S]ymbols",
-    }
-  }, { prefix = "<leader>" })
+  wk.add(
+    {
+      { "<leader>s", group = "[S]earch", icon = { icon = "", color = "blue" } },
+    })
 
-  wk.register({
-    g = {
-      name = "[G]oto",
-      d = "[G]oto [D]efinition",
-      D = "[G]oto [D]eclaration",
-      r = "[G]oto [R]eferences",
-      I = "[G]oto [I]mplementation",
+  wk.add(
+    {
+      { "<leader>w", group = "[W]orkspace" },
+      { "<leader>c", group = "[C]ode", icon = { icon = " ", color = "orange" } },
+      { "<leader>ca", desc = "[C]ode [A]ction" },
+      { "<leader>ch", desc = "[C]ode Inlay [H]ints" },
+      { "<leader>cl", desc = "[C]ode [L]ens" },
+      { "<leader>cr", desc = "[C]ode [R]ename" },
+      { "<leader>d", group = "[D]ocument" },
+      { "<leader>ss", desc = "[S]earch document [S]ymbols" },
     }
-  })
+  )
+
+  wk.add(
+    {
+      { "g",  group = "[G]oto" },
+      { "gD", desc = "[G]oto [D]eclaration" },
+      { "gI", desc = "[G]oto [I]mplementation" },
+      { "gd", desc = "[G]oto [D]efinition" },
+      { "gr", desc = "[G]oto [R]eferences" },
+    })
 end
 
 return on_attach

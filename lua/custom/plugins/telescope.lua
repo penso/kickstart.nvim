@@ -95,8 +95,8 @@ return {
       })
     end, { desc = '[/] Fuzzily search in current buffer' })
 
-    vim.keymap.set('n', '<leader>gg', require('lazygit').toggle, { desc = '[G]it Lazy[G]it' })
-    vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
+    vim.keymap.set('n', '<leader>gg', require('lazygit').toggle, { desc = 'Lazy[G]it' })
+    vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search git [F]iles' })
     vim.keymap.set('n', '<leader>gs', require('telescope.builtin').git_status, { desc = 'Search [G]it [S]tatus' })
     vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
     vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
@@ -105,11 +105,14 @@ return {
     vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
     vim.keymap.set('n', '<leader>sc', require('telescope.builtin').colorscheme, { desc = '[S]earch [C]olorscheme' })
     vim.keymap.set('n', '<leader>sr', require('telescope.builtin').oldfiles, { desc = '[S]earch [R]ecent Files' })
+
     local wk = require("which-key")
-    wk.register({
-      s = {
-        name = "[S]earch",
-      },
-    }, { prefix = "<leader>" })
+    wk.add({ { "<leader><space>", "Buffers", icon = { icon = "󰈔", color = "cyan" } } })
+    -- wk.register({ { "<leader>s", group = "[S]earch" } })
+    -- wk.register({
+    --   s = {
+    --     name = "[S]earch",
+    --   },
+    -- }, { prefix = "<leader>" })
   end
 }

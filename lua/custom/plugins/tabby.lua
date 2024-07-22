@@ -27,17 +27,18 @@ return {
     })
 
     local wk = require("which-key")
-    wk.register({
-      T = {
-        name = "[T]abs",
-        a = { "<cmd>$tabnew<cr>", "[N]ew" },
-        c = { "<cmd>tabclose<cr>", "[C]lose" },
-        o = { "<cmd>tabonly<cr>", "[O]nly" },
-        n = { "<cmd>tabn<cr>", "[N]ext" },
-        p = { "<cmd>tabp<cr>", "[P]revious" },
-        tmp = { "<cmd>:-tabmove<cr>", "[M]ove to Previous" },
-        tmn = { "<cmd>:+tabmove<cr>", "[M]ove to Next" },
-      },
-    }, { prefix = "<leader>" })
+    wk.add(
+      {
+        { "<leader>t", group = "[T]abs", icon = { icon = "󰓩 ", color = "purple" } },
+        { "<leader>ta", "<cmd>$tabnew<cr>", desc = "[N]ew" },
+        { "<leader>tc", "<cmd>tabclose<cr>", desc = "[C]lose" },
+        { "<leader>tn", "<cmd>tabn<cr>", desc = "[N]ext" },
+        { "<leader>to", "<cmd>tabonly<cr>", desc = "[O]nly" },
+        { "<leader>tp", "<cmd>tabp<cr>", desc = "[P]revious" },
+        { "<leader>tm", group = "[M]oves" },
+        { "<leader>tmn", "<cmd>:+tabmove<cr>", desc = "[M]ove to Next" },
+        { "<leader>tmp", "<cmd>:-tabmove<cr>", desc = "[M]ove to Previous" },
+      }
+    );
   end,
 }
