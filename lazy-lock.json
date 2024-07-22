@@ -12,6 +12,7 @@
   "copilot-status.nvim": { "branch": "main", "commit": "decbffa57732f3d257641aea1d5541dd4fe536f6" },
   "copilot.lua": { "branch": "master", "commit": "86537b286f18783f8b67bccd78a4ef4345679625" },
   "crates.nvim": { "branch": "main", "commit": "c3fd47391de6999f4c939af89494d08443f71916" },
+  "cyberdream.nvim": { "branch": "main", "commit": "bb3011a38b94ac4f13c107f5f1b3464c1c03ced1" },
   "darcula-dark.nvim": { "branch": "main", "commit": "15369feb5b05b8f9a1f99ae8df282a48241ea454" },
   "dashboard-nvim": { "branch": "master", "commit": "fabf5feec96185817c732d47d363f34034212685" },
   "dracula.nvim": { "branch": "main", "commit": "fdf503e52ec1c8aae07353604d891fe5a3ed5201" },
