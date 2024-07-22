@@ -52,7 +52,7 @@ local function on_attach(_, bufnr)
       { "<leader>cl", desc = "[C]ode [L]ens" },
       { "<leader>cr", desc = "[C]ode [R]ename" },
       { "<leader>d", group = "[D]ocument" },
-      { "<leader>ss", desc = "[S]earch document [S]ymbols" },
+      { "<leader>ss", desc = "[S]ymbols" },
     }
   )
 
