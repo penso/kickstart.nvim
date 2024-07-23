@@ -82,6 +82,7 @@
   "tokyonight.nvim": { "branch": "main", "commit": "7b6b1d9b22a5e04d86e6275326878fdd16736a4e" },
   "trouble.nvim": { "branch": "main", "commit": "e57250994e3d8630016176025b853110234a778b" },
   "twilight.nvim": { "branch": "main", "commit": "38dc017474ef05605ca14a2577e01e09f0db7133" },
+  "vim-flog": { "branch": "master", "commit": "36c60cbdb69c169ee44c085ce8d3f2f035a8658e" },
   "vim-fugitive": { "branch": "master", "commit": "0444df68cd1cdabc7453d6bd84099458327e5513" },
   "vim-heritage": { "branch": "main", "commit": "574baeb0679681a710adce5110a0d8b2ae1c2637" },
   "vim-illuminate": { "branch": "master", "commit": "5eeb7951fc630682c322e88a9bbdae5c224ff0aa" },
