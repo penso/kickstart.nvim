@@ -3,8 +3,9 @@ return {
   event = 'VimEnter',
   dependencies = 'nvim-tree/nvim-web-devicons',
   config = function()
-    vim.o.showtabline = 2
-    require('tabby.tabline').use_preset('active_wins_at_tail', {
+    -- if I want to always display this tab line
+    -- vim.o.showtabline = 2
+    require('tabby.tabline').use_preset('tab_only', {
       theme = {
         fill = 'TabLineFill',       -- tabline background
         head = 'TabLine',           -- head element highlight
@@ -30,7 +31,7 @@ return {
     wk.add(
       {
         { "<leader>t", group = "[T]abs", icon = { icon = "󰓩 ", color = "purple" } },
-        { "<leader>ta", "<cmd>$tabnew<cr>", desc = "[N]ew" },
+        { "<leader>ta", "<cmd>$tabnew<cr>", desc = "[A]dd" },
         { "<leader>tc", "<cmd>tabclose<cr>", desc = "[C]lose" },
         { "<leader>tn", "<cmd>tabn<cr>", desc = "[N]ext" },
         { "<leader>to", "<cmd>tabonly<cr>", desc = "[O]nly" },
