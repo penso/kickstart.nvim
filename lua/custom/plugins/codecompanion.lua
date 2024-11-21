@@ -11,17 +11,17 @@ return {
   },
   config = function()
     require("codecompanion").setup({
-      strategies = {
-        chat = {
-          adapter = "copilot",
-        },
-        inline = {
-          adapter = "copilot",
-        },
-        agent = {
-          adapter = "copilot",
-        },
-      },
+      -- strategies = {
+      --   chat = {
+      --     adapter = "copilot",
+      --   },
+      --   inline = {
+      --     adapter = "copilot",
+      --   },
+      --   agent = {
+      --     adapter = "copilot",
+      --   },
+      -- },
     })
     vim.api.nvim_set_keymap("n", "<C-a>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
     vim.api.nvim_set_keymap("v", "<C-a>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })

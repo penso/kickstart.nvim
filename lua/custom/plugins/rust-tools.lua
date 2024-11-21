@@ -33,8 +33,17 @@ return {
           right_align_padding = 7,
           highlight = "Comment",
         },
+        code_action_group = {
+          enabled = true,
+          border = "rounded",
+          width = 80,
+          opts = {
+            width = 80,
+          },
+        },
         hover_actions = {
           border = "rounded",
+          width = 80,
         },
         on_initialized = function()
           vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "CursorHold", "InsertLeave" }, {
@@ -49,7 +58,19 @@ return {
         adapter = codelldb_adapter,
       },
       server = {
-        on_attach = require("lsp_on_attach")
+        on_attach = require("lsp_on_attach"),
+        settings = {
+          -- cargo = {
+          --   allFeatures = true,
+          --   runBuildScripts = true,
+          -- },
+          ["rust-analyzer"] = {
+            assist = {
+              importMergeBehaviour = "full",
+              -- importPrefix = "plain",
+            },
+          }
+        }
       },
     }
   end,

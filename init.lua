@@ -324,6 +324,8 @@ local servers = {
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
+  solargraph = {
+  },
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
@@ -350,6 +352,7 @@ vim.cmd [[ set runtimepath^=~/.config/nvim ]]
 
 mason_lspconfig.setup_handlers {
   function(server_name)
+    -- vim.notify("Setting up analyzer: " .. server_name)
     local config = {
       capabilities = capabilities,
       on_attach = function(client, bufnr)
