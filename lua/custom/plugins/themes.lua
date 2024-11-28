@@ -7,7 +7,6 @@ return {
   -- broken gruvbox ones
   -- { "luisiacc/gruvbox-baby" },
   -- { "gruvbox-community/gruvbox" },
-  -- { "ellisonleao/gruvbox.nvim" },
 
   { "Mofiqul/vscode.nvim" },
   { "catppuccin/nvim",            name = "catppuccin" },

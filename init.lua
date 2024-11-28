@@ -14,6 +14,7 @@ vim.g.neovide_padding_right           = 0
 vim.g.neovide_padding_left            = 0
 vim.g.neovide_cursor_animation_length = 0
 vim.g.neovide_scroll_animation_length = 0
+vim.opt.sessionoptions                = 'curdir,folds,globals,help,tabpages,terminal,winsize'
 
 -- Recommended by vim-tree,
 vim.g.loaded_netrw                    = 1
@@ -142,6 +143,8 @@ require('lazy').setup({
 
   { import = 'custom.plugins' },
 }, {})
+
+
 
 -- [[ Setting options ]]
 -- See `:help vim.o`

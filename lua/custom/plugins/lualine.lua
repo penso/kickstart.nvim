@@ -130,7 +130,7 @@ return {
         }
       },
       lualine_b = { "branch", "diff" },
-      lualine_c = { "tabs" },
+      lualine_c = {}, -- tabs
       lualine_x = {
         copilot_status,
         -- get_lsp_client,
@@ -138,12 +138,13 @@ return {
         "filetype"
       },
       lualine_y = {}, -- "location"
-      lualine_z = { custom_progress, {
-        "hostname",
-        fmt = function(hostname)
-          return getFirstElement(hostname)
-        end
-      }
+      lualine_z = { custom_progress,
+        --   {
+        --   "hostname",
+        --   fmt = function(hostname)
+        --     return getFirstElement(hostname)
+        --   end
+        -- }
       },
     },
     inactive_sections = {

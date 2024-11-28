@@ -80,6 +80,7 @@ return {
           theme = "dropdown",
           enable_preview = false,
           previewer = false,
+          winblend = 15,
           layout_config = {
             horizontal = {
               mirror = false,
