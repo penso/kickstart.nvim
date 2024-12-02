@@ -3,11 +3,13 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
-    "nvim-telescope/telescope.nvim", -- Optional
+    "hrsh7th/nvim-cmp",              -- Optional: For using slash commands and variables in the chat buffer
+    "nvim-telescope/telescope.nvim", -- Optional: For using slash commands
     {
-      "stevearc/dressing.nvim",      -- Optional: Improves the default Neovim UI
-      opts = {},
+      "MeanderingProgrammer/render-markdown.nvim",
+      ft = { "markdown", "codecompanion" },  -- Optional: For prettier markdown rendering
     },
+    { "stevearc/dressing.nvim", opts = {} }, -- Optional: Improves `vim.ui.select`
   },
   config = function()
     require("codecompanion").setup({
