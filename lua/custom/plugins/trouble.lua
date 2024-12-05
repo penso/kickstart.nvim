@@ -2,11 +2,6 @@ return {
   "folke/trouble.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   cmd = "Trouble",
-  opts = {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-  },
   keys = {
     {
       "<leader>xx",
@@ -52,6 +47,11 @@ return {
       -- auto_open = false,
       -- auto_close = true,
       -- use_lsp_diagnostic_signs = true,
+      win = {
+        wo = {
+          wrap = true,
+        },
+      },
     })
   end
 }
