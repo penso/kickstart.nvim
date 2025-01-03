@@ -7,7 +7,7 @@ vim.g.changelog_username              = "Fabien Penso <changelog@pen.so>"
 vim.g.changelog_dateformat            = '## %Y-%m-%d'
 vim.g.changelog_new_entry_format      = '- %c'
 
-vim.o.guifont                         = "JetBrainsMono Nerd Font:h14"
+vim.o.guifont                         = "CaskaydiaMono Nerd Font Mono:h14"
 vim.g.neovide_padding_top             = 0
 vim.g.neovide_padding_bottom          = 0
 vim.g.neovide_padding_right           = 0
