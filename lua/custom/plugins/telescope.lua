@@ -145,6 +145,7 @@ return {
     vim.keymap.set('n', '<leader>sc', require('telescope.builtin').colorscheme, { desc = '[C]olorscheme' })
     vim.keymap.set('n', '<leader>sr', require('telescope.builtin').oldfiles, { desc = '[R]ecent Files' })
     vim.keymap.set('n', '<leader>sb', require('telescope.builtin').buffers, { desc = '[B]uffers' })
+    vim.keymap.set('n', '<leader>sm', require('telescope.builtin').marks, { desc = '[M]arks' })
 
     -- local wk = require("which-key")
     -- wk.add({ { "<leader><space>", "Buffers", icon = { icon = "󰈔", color = "cyan" } } })
