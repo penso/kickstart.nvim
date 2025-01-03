@@ -11,7 +11,7 @@ local function custom_progress()
   if current_line == 1 then
     return "TOP"
   elseif current_line == total_lines then
-    return "BOT"
+    return "BOTTOM"
   else
     return "%p%%/%L"
   end
