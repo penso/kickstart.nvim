@@ -512,7 +512,7 @@ cmp.setup {
   },
 }
 
-vim.cmd [[colorscheme gruvbox]]
+vim.cmd [[colorscheme gruvbox-material]]
 
 require 'keymaps'
 

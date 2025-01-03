@@ -23,7 +23,20 @@ return {
   { "sainnhe/sonokai" },
   { "rebelot/kanagawa.nvim" },
   { "olimorris/onedarkpro.nvim" },
-  { "rose-pine/neovim" },
+  {
+    "rose-pine/neovim",
+    config = function()
+      require("rose-pine").setup({
+        variant = "moon",
+        dark_variant = "moon",
+        styles = {
+          bold = true,
+          italic = true,
+          transparency = true,
+        },
+      })
+    end
+  },
   { "Mofiqul/dracula.nvim" },
   {
     "sainnhe/everforest",
