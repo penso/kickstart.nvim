@@ -25,7 +25,19 @@ return {
   { "olimorris/onedarkpro.nvim" },
   { "rose-pine/neovim" },
   { "Mofiqul/dracula.nvim" },
-  { "sainnhe/everforest" },
+  {
+    "sainnhe/everforest",
+    config = function()
+      vim.g.everforest_transparent_background = 2
+    end
+  },
+  {
+    "sainnhe/gruvbox-material",
+    config = function()
+      vim.g.gruvbox_material_transparent_background = 2
+    end
+
+  },
   { "shaunsingh/nord.nvim" },
   { "savq/melange-nvim" },
   -- { "mountain-theme/Mountain" }
@@ -38,9 +50,9 @@ return {
     priority = 1000,
     config = function()
       require('onedark').setup {
+        transparent = true,
         style = 'warmer',
       }
-      -- vim.cmd.colorscheme 'onedark'
     end,
   },
   { "oxfist/night-owl.nvim" },
