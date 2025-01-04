@@ -5,6 +5,11 @@ return {
   },
   config = function()
     require("telescope").load_extension("undo")
-    vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
+
+    local wk = require("which-key")
+    wk.add(
+      {
+        { "<leader>su", "<cmd>Telescope undo<cr>", group = "[U]ndo", },
+      })
   end,
 }

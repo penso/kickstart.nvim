@@ -211,10 +211,6 @@ vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', {
 vim.keymap.set('n', '<leader>;', ':Dashboard<CR>', {
   desc = 'Dashboard',
 })
-vim.keymap.set('n', '<leader>/', '<Plug>(comment_toggle_linewise_current)', {
-  desc = 'Comment ',
-})
-
 vim.keymap.set('n', '<leader>sw', ':nohlsearch<CR>', {
   desc = '[N]o [H]ighlight',
 })

@@ -5,8 +5,13 @@ return {
   ---@type snacks.Config
   opts = {
     notifier = { enabled = true },
-    quickfile = { enabled = true },
-    scroll = { enabled = true },
+    scroll = {
+      enabled = true,
+      animate = {
+        duration = { step = 5, total = 250 },
+        easing = "linear",
+      },
+    },
     terminal = { enabled = true },
   },
   keys = {

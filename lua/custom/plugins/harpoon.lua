@@ -30,7 +30,7 @@ return {
     local wk = require("which-key")
     wk.add(
       {
-        { "<leader>h", desc = "[H]arpoon" },
+        { "<leader>h", desc = "[H]arpoon", icon = { icon = "󱡀" } },
         {
           "<leader>ha",
           function() harpoon:list():add() end,
