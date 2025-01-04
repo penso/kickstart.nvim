@@ -41,13 +41,13 @@ return {
   {
     "sainnhe/everforest",
     config = function()
-      vim.g.everforest_transparent_background = 2
+      vim.g.everforest_transparent_background = 1
     end
   },
   {
     "sainnhe/gruvbox-material",
     config = function()
-      vim.g.gruvbox_material_transparent_background = 2
+      vim.g.gruvbox_material_transparent_background = 1
     end
 
   },
