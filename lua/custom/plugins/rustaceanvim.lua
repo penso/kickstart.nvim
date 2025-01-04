@@ -11,6 +11,14 @@ return {
       server = {
         on_attach = function(client, buffer)
           require("lsp_on_attach")(client, buffer)
+
+          -- Enable codelens refresh
+          vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
+            buffer = buffer,
+            callback = function()
+              vim.lsp.codelens.refresh({ bufnr = buffer })
+            end,
+          })
         end,
         default_settings = {
           -- rust-analyzer language server configuration
@@ -20,6 +28,7 @@ return {
             },
           },
         },
+
       },
       -- DAP configuration
       dap = {
