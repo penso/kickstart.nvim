@@ -7,7 +7,20 @@ return {
     require("grapple").setup({
     })
 
-    vim.keymap.set("n", "<leader>m", require("grapple").toggle)
-    vim.keymap.set("n", "<leader>M", require("grapple").toggle_tags)
+    local wk = require("which-key")
+    wk.add(
+      {
+        {
+          "<leader>m",
+          require("grapple").toggle,
+          desc = "Grapple file",
+        },
+        {
+          "<leader>M",
+          require("grapple").toggle_tags,
+          desc = "Grapple Menu",
+        },
+      }
+    );
   end
 }

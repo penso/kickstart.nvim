@@ -27,10 +27,36 @@ return {
       }):find()
     end
 
-    vim.keymap.set("n", "<leader>he", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-    vim.keymap.set("n", "<leader>hf", function() toggle_telescope(harpoon:list()) end, { desc = "Open harpoon window" })
-    vim.keymap.set("n", "<leader>ha", function() harpoon:list():add() end, { desc = "Add to harpoon" })
-    vim.keymap.set("n", "<leader>hp", function() harpoon:list():prev() end, { desc = "Harpoon previous file" })
-    vim.keymap.set("n", "<leader>hn", function() harpoon:list():next() end, { desc = "Harpoon next file" })
+    local wk = require("which-key")
+    wk.add(
+      {
+        { "<leader>h", desc = "[H]arpoon" },
+        {
+          "<leader>ha",
+          function() harpoon:list():add() end,
+          desc = "[H]arpoon [A]dd",
+        },
+        {
+          "<leader>hp",
+          function() harpoon:list():prev() end,
+          desc = "[H]arpoon [P]revious",
+        },
+        {
+          "<leader>hn",
+          function() harpoon:list():next() end,
+          desc = "[H]arpoon [N]ext",
+        },
+        {
+          "<leader>hs",
+          function() toggle_telescope(harpoon:list()) end,
+          desc = "[H]arpoon [S]earch",
+        },
+        {
+          "<leader>hm",
+          function() harpoon.ui:toggle_quick_menu(harpoon:list()) end,
+          desc = "[H]arpoon [M]enu",
+        },
+      }
+    );
   end
 }

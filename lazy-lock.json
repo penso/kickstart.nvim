@@ -78,6 +78,7 @@
   "render-markdown.nvim": { "branch": "main", "commit": "c00cc1e2cbd5a55ca0c6c2e27fcf4a02ff731434" },
   "ripgrep": { "branch": "master", "commit": "94305125ef33b86151b6cd2ce2b33d641f6b6ac3" },
   "rustaceanvim": { "branch": "master", "commit": "0a1876b970ab946be3f4d341e9d743a5d62d646a" },
+  "snacks.nvim": { "branch": "main", "commit": "d312053f78b4fb55523def179ac502438dd93193" },
   "sonokai": { "branch": "master", "commit": "0df1462da40e1473a61b80b7ce62497e0b59ff86" },
   "symbols-outline.nvim": { "branch": "master", "commit": "564ee65dfc9024bdde73a6621820866987cbb256" },
   "tabby.nvim": { "branch": "main", "commit": "c119c91f3ada1a7c62ca2d10685ac8a3e2928fb8" },
