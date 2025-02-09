@@ -442,9 +442,9 @@ end, { silent = true })
 
 -- Should I use https://github.com/LunarVim/LunarVim/blob/master/lua/lvim/icons.lua
 
-local cmp_window = require "cmp.config.window"
+-- local cmp_window = require "cmp.config.window"
 local lspkind = require('lspkind')
-local compare = require('cmp.config.compare')
+-- local compare = require('cmp.config.compare')
 
 cmp.setup {
   -- sorting = {
