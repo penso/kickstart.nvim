@@ -444,8 +444,25 @@ end, { silent = true })
 
 local cmp_window = require "cmp.config.window"
 local lspkind = require('lspkind')
+local compare = require('cmp.config.compare')
 
 cmp.setup {
+  -- sorting = {
+  --   priority_weight = 2,
+  --   comparators = {
+  --     require('cmp_ai.compare'),
+  --     compare.offset,
+  --     compare.exact,
+  --     compare.score,
+  --     compare.recently_used,
+  --     compare.kind,
+  --     compare.sort_text,
+  --     compare.length,
+  --     compare.order,
+  --   },
+  -- },
+  performance = { fetching_timeout = 2000 },
+  fetching_timeout = 2000,
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
@@ -481,7 +498,10 @@ cmp.setup {
     end, { 'i', 's' }),
   },
   sources = {
+    -- { name = 'avante' },
     { name = 'copilot' },
+    { name = 'minuet' },
+    -- { name = 'cmp_ai' },
     { name = 'nvim_lsp' },
     { name = "path" },
     { name = "luasnip" },
@@ -497,7 +517,6 @@ cmp.setup {
   formatting = {
     expandable_indicator = true,
     fields = { 'kind', 'abbr', 'menu' },
-
     format = lspkind.cmp_format({
       mode = 'default',      -- show only symbol annotations
       maxwidth = 50,         -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
@@ -505,14 +524,21 @@ cmp.setup {
       symbol_map = { Copilot = "" },
       before = function(entry, item)
         item.menu = ({
+          HF = "",
+          OpenAI = "",
+          Codestral = "",
+          Bard = "",
+          Ollama = "[Ollama]",
+          codecompanion = '[CC]',
           buffer = '[Buffer]',
           luasnip = '[Snip]',
           nvim_lsp = '[LSP]',
           nvim_lua = '[API]',
           path = '[Path]',
           rg = '[RG]',
-          copilot = '[Copilot]',
-
+          copilot = '[]',
+          minuet = '[Minuet]',
+          cmp_ai = '[cmp_ai]',
           emoji = "(Emoji)",
           calc = "(Calc)",
           cmp_tabnine = "(Tabnine)",

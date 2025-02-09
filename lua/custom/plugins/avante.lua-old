@@ -4,8 +4,26 @@ return {
   version = false,
   lazy = false, -- set this if you want to always pull the latest change
   opts = {
-    -- add any opts here
-    provider = "openai"
+    hints = { enabled = true },
+    provider = "lmstudio",
+    auto_suggestions_provider = "lmstudio",
+    api_key_name = '',
+    use_absolute_path = true,
+    vendors = {
+      lmstudio = {
+        __inherited_from = 'openai',
+        api_key_name = '',
+        endpoint = 'http://m4max.local:1234/v1',
+        model = 'deepseek-r1-distill-qwen-14b',
+      },
+    },
+    behaviour = {
+      auto_suggestions = true, -- Experimental stage
+      auto_set_highlight_group = true,
+      auto_set_keymaps = true,
+      auto_apply_diff_after_generation = false,
+      support_paste_from_clipboard = true,
+    },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = "make",
