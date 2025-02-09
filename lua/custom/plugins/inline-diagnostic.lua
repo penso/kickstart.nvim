@@ -5,6 +5,6 @@ return {
   config = function()
     require('tiny-inline-diagnostic').setup()
     -- Only if needed in your configuration, if you already have native LSP diagnostics
-    vim.diagnostic.config({ virtual_text = false })
+    vim.diagnostic.config({ virtual_text = true })
   end
 }
