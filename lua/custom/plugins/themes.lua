@@ -8,6 +8,10 @@ return {
       })
     end
   },
+  {
+    "rjshkhr/shadow.nvim",
+    priority = 1000,
+  },
   -- { "gruvbox-community/gruvbox" },
   -- { "sonph/onehalf",            rtp = "vim" },
   { "EdenEast/nightfox.nvim" },
