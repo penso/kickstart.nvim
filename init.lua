@@ -173,7 +173,6 @@ require('lazy').setup({
 }, {})
 
 
-
 -- [[ Setting options ]]
 -- See `:help vim.o`
 
@@ -232,13 +231,13 @@ vim.opt.cursorline     = true
 vim.opt.laststatus     = 3
 
 -- [[ Basic Keymaps ]]
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', {
-  desc = 'Explorer',
-  noremap = true
-})
-vim.keymap.set('n', '<leader>;', ':Dashboard<CR>', {
-  desc = 'Dashboard',
-})
+-- vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', {
+--   desc = 'Explorer',
+--   noremap = true
+-- })
+-- vim.keymap.set('n', '<leader>;', ':Dashboard<CR>', {
+--   desc = 'Dashboard',
+-- })
 vim.keymap.set('n', '<leader>sw', ':nohlsearch<CR>', {
   desc = '[N]o [H]ighlight',
 })

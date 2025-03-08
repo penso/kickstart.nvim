@@ -1,5 +1,6 @@
 return {
   "f-person/git-blame.nvim",
+  lazy   = true,
   config = function()
     require('gitblame').setup {
       enabled = false,

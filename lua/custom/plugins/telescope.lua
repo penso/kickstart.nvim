@@ -29,6 +29,7 @@ return {
           },
         },
         layout_strategy = 'horizontal',
+        sorting_strategy = "ascending",
         layout_config = {
           prompt_position = 'top',
           horizontal = {
@@ -43,8 +44,8 @@ return {
         },
         wrap_results = true,
         path_display = {
-          "truncate",
-          -- "smart",
+          -- "truncate",
+          "smart",
           -- 'shorten',
           -- "filename_first",
           -- filename_first = {
@@ -76,11 +77,10 @@ return {
           -- -- },
           -- previewer = false,
           -- enable_preview = false,
-          sort_lastused = true,
           theme = "dropdown",
-          enable_preview = false,
           previewer = false,
-          winblend = 15,
+          sort_lastused = true,
+          -- winblend = 15,
           layout_config = {
             horizontal = {
               mirror = false,
@@ -109,6 +109,28 @@ return {
             -- prompt_position = 'top',
           },
           previewer = false,
+        },
+        lsp_document_symbols = {
+          -- theme = "dropdown",
+          previewer = true,
+          preview_title = "LSP Preview",
+          dynamic_preview_title = true,
+          sorting_strategy = "ascending",
+          layout_config = {
+            prompt_position = 'top',
+            horizontal = {
+              mirror = false,
+              width = 0.95,
+              height = 0.90,
+            },
+          },
+          mappings = {
+            i = {
+              -- ["<c-f>"] = function(prompt_bufnr) vim.api.nvim_input('function') end,
+              -- ["<c-m>"] = function() vim.api.nvim_input('method') end,
+              -- ["<C-h>"] = "which_key"
+            },
+          }
         },
       },
       extensions = {
@@ -144,6 +166,7 @@ return {
     vim.keymap.set('n', '<leader>sr', require('telescope.builtin').oldfiles, { desc = '[R]ecent Files' })
     vim.keymap.set('n', '<leader>sb', require('telescope.builtin').buffers, { desc = '[B]uffers' })
     vim.keymap.set('n', '<leader>sm', require('telescope.builtin').marks, { desc = '[M]arks' })
+    vim.keymap.set('n', '<leader>sl', require('telescope.builtin').lsp_document_symbols, { desc = '[L]sp' })
 
     -- local wk = require("which-key")
     -- wk.add({ { "<leader><space>", "Buffers", icon = { icon = "󰈔", color = "cyan" } } })

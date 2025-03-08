@@ -16,7 +16,7 @@ return
 
     wk.add({
       { "<leader>x", group = "Diagnostics" },
-      { "<leader>e", icon = { icon = "󰈔", color = "cyan" } },
+      -- { "<leader>e", icon = { icon = "󰈔", color = "cyan" } },
     })
   end,
   keys = {
