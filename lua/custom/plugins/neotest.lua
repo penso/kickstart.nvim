@@ -13,6 +13,13 @@ return {
       },
     }
 
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "neotest-output-panel",
+      callback = function()
+        vim.cmd("norm G")
+      end,
+    })
+
     local wk = require("which-key")
     wk.add(
       {
