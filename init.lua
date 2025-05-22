@@ -847,7 +847,7 @@ require('lazy').setup({
         -- Adjusts spacing to ensure icons are aligned
         nerd_font_variant = 'normal',
         kind_icons = {
-          Copilot = '', -- '', -- '',
+          Copilot = '', -- ''
           Text = '󰉿',
           Method = '󰊕',
           Function = '󰊕',
@@ -889,7 +889,7 @@ require('lazy').setup({
       },
 
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'lazydev', 'minuet', 'copilot' },
+        default = { 'lsp', 'path', 'buffer', 'snippets', 'lazydev', 'minuet', 'copilot' },
         providers = {
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
           copilot = {
