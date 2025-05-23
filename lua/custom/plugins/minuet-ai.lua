@@ -27,10 +27,39 @@ return {
           api_key = 'TERM',
           name = 'ollama',
           end_point = 'http://m4max.local:1234/v1/chat/completions',
-          model = 'deepseek-r1-distill-qwen-7b', -- 'qwen2.5-coder-3b-instruct',
+          model = 'qwen2.5-coder-3b-instruct',
           optional = {
             max_tokens = 256,
             top_p = 0.9,
+          },
+        },
+        gemini = {
+          model = 'gemini-2.0-flash',
+          system = 'see [Prompt] section for the default value',
+          few_shots = 'see [Prompt] section for the default value',
+          chat_input = 'See [Prompt Section for default value]',
+          stream = true,
+          api_key = 'GEMINI_API_KEY',
+          end_point = 'https://generativelanguage.googleapis.com/v1beta/models',
+          optional = {
+            generationConfig = {
+              maxOutputTokens = 256,
+              -- When using `gemini-2.5-flash`, it is recommended to entirely
+              -- disable thinking for faster completion retrieval.
+              thinkingConfig = {
+                thinkingBudget = 0,
+              },
+            },
+            safetySettings = {
+              {
+                -- HARM_CATEGORY_HATE_SPEECH,
+                -- HARM_CATEGORY_HARASSMENT
+                -- HARM_CATEGORY_SEXUALLY_EXPLICIT
+                category = 'HARM_CATEGORY_DANGEROUS_CONTENT',
+                -- BLOCK_NONE
+                threshold = 'BLOCK_ONLY_HIGH',
+              },
+            },
           },
         },
       },
