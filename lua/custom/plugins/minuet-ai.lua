@@ -27,7 +27,7 @@ return {
           api_key = 'TERM',
           name = 'ollama',
           end_point = 'http://m4max.local:1234/v1/chat/completions',
-          model = 'qwen2.5-coder-3b-instruct',
+          model = 'deepseek-r1-distill-qwen-7b', -- 'qwen2.5-coder-3b-instruct',
           optional = {
             max_tokens = 256,
             top_p = 0.9,
