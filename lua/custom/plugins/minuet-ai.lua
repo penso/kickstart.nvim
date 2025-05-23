@@ -10,11 +10,11 @@ return {
       request_timeout = 30000,
       context_window = 768,
       notify = 'debug', -- Enabled debug notifications
-      provider = 'openai', -- Using standard OpenAI provider
+      provider = 'openai_compatible', -- Using standard OpenAI provider
       provider_options = {
         openai = {
           api_key = 'OPENAI_API_KEY',
-          name = 'OpenAI', -- Provider name
+          name = 'OpenAI',
           end_point = 'https://api.openai.com/v1/chat/completions', -- Standard OpenAI chat endpoint
           model = 'gpt-3.5-turbo', -- Standard chat model
           optional = {
@@ -22,10 +22,9 @@ return {
             top_p = 0.9,
           },
         },
-        --[[ -- Commenting out LM Studio configuration for now
         openai_compatible = {
-          api_key = 'PWD',
-          name = 'lmstudio',
+          api_key = 'TERM',
+          name = 'ollama',
           end_point = 'http://m4max.local:1234/v1/chat/completions',
           model = 'qwen2.5-coder-3b-instruct',
           optional = {
@@ -33,7 +32,6 @@ return {
             top_p = 0.9,
           },
         },
-        --]]
       },
       -- Other options like n_completions can be added here if needed for OpenAI
       -- n_completions = 1,
