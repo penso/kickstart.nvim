@@ -13,7 +13,7 @@ return {
       provider = 'openai', -- Using standard OpenAI provider
       provider_options = {
         openai = {
-          api_key = vim.fn.getenv('OPENAI_API_KEY'),
+          api_key = 'OPENAI_API_KEY',
           name = 'OpenAI', -- Provider name
           end_point = 'https://api.openai.com/v1/chat/completions', -- Standard OpenAI chat endpoint
           model = 'gpt-3.5-turbo', -- Standard chat model
@@ -36,7 +36,7 @@ return {
         --]]
       },
       -- Other options like n_completions can be added here if needed for OpenAI
-      -- n_completions = 1, 
+      -- n_completions = 1,
     }
   end,
 }
