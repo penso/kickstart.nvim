@@ -9,7 +9,7 @@ return {
     require('minuet').setup {
       request_timeout = 30000,
       context_window = 768,
-      notify = 'debug', -- Enabled debug notifications
+      -- notify = 'debug', -- Enabled debug notifications
       provider = 'openai_compatible', -- Using standard OpenAI provider
       provider_options = {
         openai = {
@@ -23,6 +23,7 @@ return {
           },
         },
         openai_compatible = {
+          stream = true,
           api_key = 'TERM',
           name = 'ollama',
           end_point = 'http://m4max.local:1234/v1/chat/completions',

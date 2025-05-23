@@ -105,7 +105,7 @@ vim.o.number = true
 vim.o.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
-vim.o.mouse = 'a'
+vim.o.mouse = 'r'
 
 -- Don't show the mode, since it's already in the status line
 vim.o.showmode = false
@@ -837,12 +837,16 @@ require('lazy').setup({
         -- <c-k>: Toggle signature help
         --
         -- See :h blink-cmp-config-keymap for defining your own keymap
-        preset = 'super-tab',
+        preset = 'enter',
 
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
       },
       appearance = {
+        -- format = function(entry, item)
+        --   item.menu = entry.source.name
+        --   return item
+        -- end,
         -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
         -- Adjusts spacing to ensure icons are aligned
         nerd_font_variant = 'normal',
@@ -870,6 +874,24 @@ require('lazy').setup({
           Keyword = '󰻾',
           Constant = '󰏿',
 
+          Minuet = '󰙯',
+          -- Minuet = '🤖',
+
+          fallback = '󰜚',
+
+          -- Et si je veux voir si je peux
+          -- et encore une fois
+
+          claude = '󰋦',
+          openai = '󱢆',
+          openai_compatible = '󱢆',
+          codestral = '󱎥',
+          gemini = '',
+          Groq = '',
+          Openrouter = '󱂇',
+          ollama = '󰳆',
+          Deepseek = '',
+
           Snippet = '󱄽',
           Color = '󰏘',
           File = '󰈔',
@@ -886,6 +908,33 @@ require('lazy').setup({
         -- Optionally, set `auto_show = true` to show the documentation after a delay.
         documentation = { auto_show = false, auto_show_delay_ms = 500 },
         -- trigger = { prefetch_on_insert = false },
+        menu = {
+          draw = {
+            columns = {
+              { 'kind_icon', gap = 1 },
+              { 'label', 'label_description', gap = 1 },
+              { 'kind' },
+              -- { 'source_icon' },
+            },
+            components = {
+              kind = {
+                text = function(ctx)
+                  return '[' .. ctx.kind .. ']'
+                end,
+                highlight = 'BlinkCmpKind',
+              },
+              --   source_icon = {
+              --     -- don't truncate source_icon
+              --     ellipsis = false,
+              --     text = function(ctx)
+              --       return ctx.source_name:lower()
+              --       -- return source_icons[ctx.source_name:lower()] or '󰜚'
+              --     end,
+              --     highlight = 'BlinkCmpSource',
+              --   },
+            },
+          },
+        },
       },
 
       sources = {
@@ -895,7 +944,7 @@ require('lazy').setup({
           copilot = {
             name = 'copilot',
             module = 'blink-cmp-copilot',
-            score_offset = 100,
+            score_offset = 200,
             async = true,
             transform_items = function(_, items)
               local CompletionItemKind = require('blink.cmp.types').CompletionItemKind
@@ -913,8 +962,17 @@ require('lazy').setup({
             async = true,
             -- Should match minuet.config.request_timeout * 1000,
             -- since minuet.config.request_timeout is in seconds
-            timeout_ms = 3000,
-            score_offset = 50, -- Gives minuet higher priority among suggestions
+            timeout_ms = 10000,
+            score_offset = 100, -- Gives minuet higher priority among suggestions
+            transform_items = function(_, items)
+              local K = require('blink.cmp.types').CompletionItemKind
+              local idx = #K + 1
+              K[idx] = 'Minuet'
+              for _, it in ipairs(items) do
+                it.kind = idx
+              end
+              return items
+            end,
           },
         },
       },
