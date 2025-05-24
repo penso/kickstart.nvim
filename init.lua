@@ -908,9 +908,10 @@ require('lazy').setup({
         list = { selection = { preselect = true } },
         -- By default, you may press `<c-space>` to show the documentation.
         -- Optionally, set `auto_show = true` to show the documentation after a delay.
-        documentation = { auto_show = true, auto_show_delay_ms = 500 },
+        documentation = { auto_show = true, auto_show_delay_ms = 500, window = { border = 'rounded' } },
         -- trigger = { prefetch_on_insert = false },
         menu = {
+          border = 'rounded',
           draw = {
             columns = {
               { 'kind_icon', gap = 1 },
@@ -939,7 +940,7 @@ require('lazy').setup({
       },
 
       sources = {
-        default = { 'lsp', 'path', 'buffer', 'snippets', 'lazydev', 'minuet', 'copilot' },
+        default = { 'copilot', 'minuet', 'lsp', 'path', 'buffer', 'snippets', 'lazydev' },
         providers = {
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
           copilot = {
