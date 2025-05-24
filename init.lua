@@ -904,9 +904,11 @@ require('lazy').setup({
       },
 
       completion = {
+        trigger = { show_on_keyboard = true },
+        list = { selection = { preselect = true } },
         -- By default, you may press `<c-space>` to show the documentation.
         -- Optionally, set `auto_show = true` to show the documentation after a delay.
-        documentation = { auto_show = false, auto_show_delay_ms = 500 },
+        documentation = { auto_show = true, auto_show_delay_ms = 500 },
         -- trigger = { prefetch_on_insert = false },
         menu = {
           draw = {
@@ -914,7 +916,6 @@ require('lazy').setup({
               { 'kind_icon', gap = 1 },
               { 'label', 'label_description', gap = 1 },
               { 'kind' },
-              -- { 'source_icon' },
             },
             components = {
               kind = {
