@@ -3,6 +3,7 @@
 
 return {
   'stevearc/aerial.nvim',
+  branch = 'master', -- Includes support for Neovim 0.12 Tree-sitter query results.
   opts = {},
   -- Optional dependencies
   dependencies = {

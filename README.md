@@ -21,6 +21,9 @@ If you are experiencing issues, please make sure you have the latest versions.
 
 ### Install External Dependencies
 
+This configuration uses the current Tree-sitter API and requires Neovim 0.12 or later.
+Install `tree-sitter-cli` 0.26.1 or later for parser builds (`brew install tree-sitter-cli` on macOS).
+
 External Requirements:
 - Basic utils: `git`, `make`, `unzip`, C Compiler (`gcc`)
 - [ripgrep](https://github.com/BurntSushi/ripgrep#installation),
@@ -238,4 +241,3 @@ sudo dnf install -y gcc make git ripgrep fd-find unzip neovim
 sudo pacman -S --noconfirm --needed gcc make git ripgrep fd unzip neovim
 ```
 </details>
-
